@@ -8,7 +8,7 @@ const Header = () => {
      <input type="text" placeholder="Search.." className='searchbar'/>
      <img src={user} alt="user" width="50" height="50"/>
     </div>
-  )
+  ) 
 }
 
 export default Header

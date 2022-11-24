@@ -15,7 +15,7 @@ function App() {
         
       ])}
       <br/>
-    <h3><b>Using JSX</b></h3>
+    <h3><b>Using JSX</b></h3> 
     {
     <span>
     <h4>This is the first heading</h4>
