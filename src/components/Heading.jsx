@@ -7,7 +7,7 @@ const Heading = () => {
       <h5>This is the second heading</h5>
       <h6>This is the third heading</h6>
     </div>
-  )
+  ) 
 }
  
 export default Heading

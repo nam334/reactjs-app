@@ -10,6 +10,6 @@ const CardComponent = (props) => {
       <h6>{props.items.location}</h6>
     </div>
     )
-  }
+  } 
 
   export default CardComponent

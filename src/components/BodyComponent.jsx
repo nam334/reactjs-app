@@ -8,7 +8,7 @@ const BodyComponent = () => {
           company:"Persistent Systems Limited",
           location:"Assam",
         
-        },
+        }, 
         {
           img:"" ,
           name:"Pranav Sonawnane",
