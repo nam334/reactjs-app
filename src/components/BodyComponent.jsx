@@ -1,6 +1,6 @@
 import React from 'react'
 import CardComponent from './CardComponent'
-const BodyCompoent = () => {
+const BodyComponent = () => {
     const data = [
         {
           img:"" ,
@@ -92,4 +92,4 @@ const BodyCompoent = () => {
   )
 }
 
-export default BodyCompoent
+export default BodyComponent
