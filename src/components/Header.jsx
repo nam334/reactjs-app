@@ -6,7 +6,7 @@ const Header = () => {
     <div className='navbar'>
       <h6>Logo</h6>
     </div>
-  ) 
+  )  
 }
 
 export default Header
