@@ -1,5 +1,5 @@
 const CardComponent = (props) => {
-  console.log('hi')
+ 
     return(
       
     <div className="card">
