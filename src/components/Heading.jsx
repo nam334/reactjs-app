@@ -8,6 +8,6 @@ const Heading = () => {
       <h6>This is the third heading</h6>
     </div>
   )
-}
+} 
  
 export default Heading

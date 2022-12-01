@@ -7,6 +7,6 @@ const Header = () => {
       <h6>Logo</h6>
     </div>
   ) 
-}
+} 
 
 export default Header

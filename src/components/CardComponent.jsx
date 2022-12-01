@@ -1,6 +1,6 @@
 const CardComponent = (props) => {
  
-    return(
+    return( 
       
     <div className="card">
       <img src={props.items.img} width="200" height="200" alt="profilepic"/>

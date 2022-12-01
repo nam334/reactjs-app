@@ -5,7 +5,7 @@ import SearchBar from './SearchBar'
 const BodyComponent = () => {
    const [searchData, setsearchData] = useState(data)
       
-  return (
+  return ( 
     <>
     <SearchBar setsearchData={setsearchData}/>
     <div className='card-container'>

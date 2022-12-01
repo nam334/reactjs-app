@@ -8,7 +8,7 @@ const SearchBar = ({setsearchData}) => {
    return data.filter((result)=> result.name.toLowerCase().includes(searchText) || result.company.toLowerCase().includes(searchText))
   }
   const submitHandler = (e) => {
-    e.preventDefault()
+    e.preventDefault() 
     setsearchData(searchHandler(searchText))
   }
   return (
