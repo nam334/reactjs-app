@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import data from '../data.json'
 const SearchBar = ({setsearchData,searchData}) => {
   const [searchText, setSearchText] = useState('')
   const searchHandler = (searchText) => 
   { 
-    return [...searchData].filter((res,i)=> res.name.toLowerCase().includes(searchText) 
+    return searchData.filter((res,i)=> res.name.toLowerCase().includes(searchText) 
     )
   }
   const submitHandler = (e) => {
