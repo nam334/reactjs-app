@@ -1,13 +1,12 @@
 import './App.css';
 import BodyComponent from './components/BodyComponent';
-import CardComponent from './components/CardComponent';
 import Header from './components/Header';
-import Heading from './components/Heading';
 import {createBrowserRouter, RouterProvider, Outlet} from 'react-router-dom'
 import ErrorComponent from './components/ErrorComponent';
 import TeamMemberDetails from './components/TeamMemberDetails';
 import About from './components/About';
-
+import ProfileComponent from './components/ProfileComponent'
+import NestedProfile from './components/NestedProfile';
 function App() {
  
   return (
@@ -37,6 +36,19 @@ export const appRouter = createBrowserRouter([
         path:"/about",
         element:<About/>,
         errorElement: <ErrorComponent/>,
+        children:[
+          {
+            path:"profile",
+            element:<ProfileComponent name="Namrata Das" />,
+            errorElement:<ErrorComponent/>,
+            children:[
+              {
+                path:"nestedprofile",
+                element: <NestedProfile/>
+              }
+            ]
+          }
+        ]
       }
     ]
   },

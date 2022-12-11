@@ -16,8 +16,8 @@ const BodyComponent = () => {
         arr.push(json)
       })
       setsearchData(arr)
-     } 
-
+     }  
+ 
   return (  
     <>
     <SearchBar setsearchData={setsearchData} searchData={searchData}/>
