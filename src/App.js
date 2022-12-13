@@ -1,33 +1,58 @@
-import React from 'react';
 import './App.css';
+import BodyComponent from './components/BodyComponent';
 import Header from './components/Header';
-import Heading from './components/Heading';
-
+import {createBrowserRouter, RouterProvider, Outlet} from 'react-router-dom'
+import ErrorComponent from './components/ErrorComponent';
+import TeamMemberDetails from './components/TeamMemberDetails';
+import About from './components/About';
+import ProfileComponent from './components/ProfileComponent'
+import NestedProfile from './components/NestedProfile';
 function App() {
+ 
   return (
-    <div>
-      <Header/>
-      <h3><b>Using React.createElement</b></h3>
-      { React.createElement( "div", {id:"title"}, [
-        React.createElement( "h4", {style:{ color: "black"}}, "This is the first heading"),
-        React.createElement( "h5", {style:{ color: "black"}}, "This is the second heading"),
-        React.createElement( "h6", {style:{ color: "black"}}, "This is the third heading")
-        
-      ])}
-      <br/>
-    <h3><b>Using JSX</b></h3>
-    {
-    <span>
-    <h4>This is the first heading</h4>
-    <h5>This is the second heading</h5>
-    <h6>This is the third heading</h6>
-    </span>
-    }
-    <br/>
-    <h3><b>Using Functional Component</b></h3>
-    <Heading/>
-    </div>
+    <>
+    <Header/>
+    <Outlet/>
+    {/* <BodyComponent /> */}
+    </>
   );
 }
 
+export const appRouter = createBrowserRouter([
+  {
+    path:"/",
+    element:<App/>,
+    errorElement: <ErrorComponent/>,
+    children:[
+      {
+        path:"/team/:id",
+        element:<TeamMemberDetails/>,
+      },
+      {
+        path:"/search",
+        element:<BodyComponent />,
+      },
+      {
+        path:"/about",
+        element:<About/>,
+        errorElement: <ErrorComponent/>,
+        children:[
+          {
+            path:"profile",
+            element:<ProfileComponent name="Namrata Das" />,
+            errorElement:<ErrorComponent/>,
+            children:[
+              {
+                path:"nestedprofile",
+                element: <NestedProfile/>
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  
+  
+])
 export default App;
