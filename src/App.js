@@ -4,9 +4,12 @@ import Header from './components/Header';
 import {createBrowserRouter, RouterProvider, Outlet} from 'react-router-dom'
 import ErrorComponent from './components/ErrorComponent';
 import TeamMemberDetails from './components/TeamMemberDetails';
-import About from './components/About';
+//import About from './components/About';
 import ProfileComponent from './components/ProfileComponent'
 import NestedProfile from './components/NestedProfile';
+import { lazy, Suspense } from 'react';
+
+const About = lazy(()=>import("./components/About"))
 function App() {
  
   return (
@@ -34,7 +37,7 @@ export const appRouter = createBrowserRouter([
       },
       {
         path:"/about",
-        element:<About/>,
+        element:<Suspense fallback={<h1>Loading..</h1>}><About/></Suspense>,
         errorElement: <ErrorComponent/>,
         children:[
           {

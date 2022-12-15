@@ -19,7 +19,7 @@ export class About extends Component {
     console.log("About render")
     return (
       <div>
-        About
+        We are EcmaScripters!
         <Outlet/>
         </div>
     )
