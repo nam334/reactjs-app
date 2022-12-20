@@ -1,14 +1,25 @@
-import React from 'react'
-import logo from '../images/images.png'
-import user from '../images/user.png'
+import UserContext from '../context/UserContext'
+import { heading } from '../utils/constants'
+
 const Header = () => {
   return (
-    <div className='navbar'>
-     <img src={logo} alt="logo" width="50" height="50"/>
-     <input type="text" placeholder="Search.." className='searchbar'/>
-     <img src={user} alt="user" width="50" height="50"/>
+    <>
+     <div className='navbar'>
+      <h6>{heading}</h6>
     </div>
-  )
-}
+    {/* <UserContext.Consumer>
+      {({email, setEmail})=> {
+        return(
+          <>
+          <span>{email}</span>
+          <button onClick={()=>{ setEmail("dummy@gmail.com")}}>Click here</button>
+          </>
+        )
+      }}
+    </UserContext.Consumer> */}
+    </>
+   
+  ) 
+} 
 
 export default Header

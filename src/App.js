@@ -1,33 +1,26 @@
-import React from 'react';
+import { useState } from 'react';
+
 import './App.css';
 import Header from './components/Header';
-import Heading from './components/Heading';
+import {Outlet} from 'react-router-dom'
+import UserContext from './context/UserContext';
+import ThemeContext from './context/ThemeContext';
 
 function App() {
+ //const [email, setEmail] = useState("test@gmail.com")
+ const [theme, setTheme] = useState("light")
   return (
-    <div>
-      <Header/>
-      <h3><b>Using React.createElement</b></h3>
-      { React.createElement( "div", {id:"title"}, [
-        React.createElement( "h4", {style:{ color: "black"}}, "This is the first heading"),
-        React.createElement( "h5", {style:{ color: "black"}}, "This is the second heading"),
-        React.createElement( "h6", {style:{ color: "black"}}, "This is the third heading")
-        
-      ])}
-      <br/>
-    <h3><b>Using JSX</b></h3>
-    {
-    <span>
-    <h4>This is the first heading</h4>
-    <h5>This is the second heading</h5>
-    <h6>This is the third heading</h6>
-    </span>
-    }
-    <br/>
-    <h3><b>Using Functional Component</b></h3>
-    <Heading/>
-    </div>
+    <>
+    <ThemeContext.Provider value={{theme:theme, setTheme:setTheme}}>
+    {/* <UserContext.Provider value={{email:email, setEmail: setEmail}}> */}
+    <Header/>
+    <Outlet/>
+    {/* </UserContext.Provider> */}
+    </ThemeContext.Provider>
+   
+    </>
   );
 }
+
 
 export default App;
