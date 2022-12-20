@@ -1,27 +1,35 @@
 import { useState , useEffect} from 'react'
+import {Link} from 'react-router-dom'
+
 import CardComponent from './CardComponent'
 import SearchBar from './SearchBar'
-import {Link} from 'react-router-dom'
+import { teamData } from '../utils/constants'
+
 const BodyComponent = () => {
    const [searchData, setsearchData] = useState([])
+   console.log(searchData)
+
    useEffect(()=>{
-    fetchTeamData()
-   },[])
-   async function fetchTeamData(){
-      const teamData = ['nam334','BhaveshSSingh','gk9848970']
-      const arr = []
-      teamData.map(async (teamMemberId,i)=>{
-        const data =  await fetch(`https://api.github.com/users/${teamMemberId}`)
+    function fetchTeamData(){
+        const data = teamData.map(async member => {
+        const data = await fetch(`https://api.github.com/users/${member}`)
         const json = await data.json()  
-        arr.push(json)
+        return json
       })
-      setsearchData(arr)
-     }  
- 
+      return data
+    }
+    const res = fetchTeamData()
+    Promise.all(res).then((values) => {
+        setsearchData(values)
+    });
+   },[])
   return (  
     <>
     <SearchBar setsearchData={setsearchData} searchData={searchData}/>
     {
+      searchData && <CardComponent searchData={searchData}/>
+    }
+    {/* {
       searchData.map(items => (
         <>
          <Link to={`/team/${items?.login}`}> 
@@ -29,7 +37,7 @@ const BodyComponent = () => {
         </Link>     
         </>
       ))
-    }
+    } */}
     </>
   )} 
 export default BodyComponent

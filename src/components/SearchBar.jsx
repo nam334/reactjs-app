@@ -1,6 +1,8 @@
 import { useState } from 'react'
+
 import stateData from '../utils/statedata.json'
 import useCities from './customhooks/useCities'
+
 const SearchBar = ({setsearchData,searchData}) => {
   const [searchText, setSearchText] = useState('')
   const [stateName, setStateName] =  useState('Assam')
@@ -9,12 +11,14 @@ const SearchBar = ({setsearchData,searchData}) => {
   const cityList = useCities(stateName)
   const searchHandler = (searchText) => 
   { 
-    return searchData.filter((res,i)=> res.name.toLowerCase().includes(searchText) 
+    return searchData?.filter((res,i)=> res.name.toLowerCase().includes(searchText.toLowerCase())
+
     )
   }
   const submitHandler = (e) => {
     e.preventDefault() 
-    setsearchData(searchHandler(searchText))
+    const filteredResults = searchHandler(searchText)
+    setsearchData(filteredResults)
   }
   return (
     <>

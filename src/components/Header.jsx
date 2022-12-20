@@ -1,10 +1,10 @@
-import logo from '../images/images.png'
-import user from '../images/user.png'
+import { heading } from '../utils/constants'
+
 const Header = () => {
   return (
     <>
      <div className='navbar'>
-      <h6>Logo</h6>
+      <h6>{heading}</h6>
     </div>
     </>
    

@@ -1,8 +1,10 @@
 import React from 'react'
+import { useRouteError } from "react-router-dom";
 
 const ErrorComponent = () => {
+  const errorData = useRouteError();
   return (
-    <div>ErrorComponent</div>
+    <div>Error: {errorData.statusText}</div>
   )
 }
 

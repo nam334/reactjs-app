@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+
 import stateData from '../../utils/statedata.json'
 const useCities = (stateName) => {
     const [cities, setCities] = useState([])

@@ -1,44 +1,25 @@
-const CardComponent = ({items}) => {
- console.log(items)
-    // if(!items) return null
+const CardComponent = ({searchData}) => {
+  if(!searchData) return null
+ console.log({searchData})
     return( 
-    <>
-    {/* {
-      items.map((item,index)=> {
-       return <>
-      <div className="card"> 
-      <img src={item.avatar_url} width="200" height="200" alt="profilepic"/>
-      <h6>{item.name}</h6>
-      <h6>{item.location}</h6>
-      <h6>{item.blog}</h6>
-      <h6>{item.twitter_username}</h6>
+    <div className="card-container">
+    {
+      searchData.map(data  => (
+    
+      <div className="card" key={data.id}>
+      <img src={data.avatar_url} width="200" height="200" alt="profilepic"/>
+      <h6>{data.name}</h6>
+      <h6>{data.location}</h6>
+      <h6>{data.blog}</h6> 
+      <h6>{data.twitter_username}</h6>
     </div> 
-        </> 
-      }) 
-    } */}
-     <div className="card">
-      <img src={items.avatar_url} width="200" height="200" alt="profilepic"/>
-      <h6>{items.name}</h6>
-      <h6>{items.location}</h6>
-      <h6>{items.blog}</h6> 
-      <h6>{items.twitter_username}</h6>
-    </div>  
-    </>
+    
+      ))
+    }
+    
+    </div>
    
     )
   }
 
   export default CardComponent 
-  {/* {
-      items.map((item,index)=> {
-       return <>
-      <div className="card"> 
-      <img src={item.avatar_url} width="200" height="200" alt="profilepic"/>
-      <h6>{item.name}</h6>
-      <h6>{item.location}</h6>
-      <h6>{item.blog}</h6>
-      <h6>{item.twitter_username}</h6>
-    </div> 
-        </> 
-      })
-    } */}

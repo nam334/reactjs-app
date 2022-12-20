@@ -1,5 +1,6 @@
 import {useParams} from 'react-router-dom'
 import { useEffect, useState } from 'react'
+
 import CardComponent from './CardComponent'
 const TeamMemberDetails = () => {
     const {id} = useParams()
