@@ -1,14 +1,12 @@
-import { useState , useEffect} from 'react'
-import {Link} from 'react-router-dom'
+import { useState , useEffect, useContext} from 'react'
 
 import CardComponent from './CardComponent'
 import SearchBar from './SearchBar'
 import { teamData } from '../utils/constants'
 
-const BodyComponent = () => {
-   const [searchData, setsearchData] = useState([])
-   console.log(searchData)
 
+const BodyComponent = () => { 
+   const [searchData, setsearchData] = useState([])
    useEffect(()=>{
     function fetchTeamData(){
         const data = teamData.map(async member => {
@@ -26,18 +24,10 @@ const BodyComponent = () => {
   return (  
     <>
     <SearchBar setsearchData={setsearchData} searchData={searchData}/>
+    
     {
       searchData && <CardComponent searchData={searchData}/>
     }
-    {/* {
-      searchData.map(items => (
-        <>
-         <Link to={`/team/${items?.login}`}> 
-         <CardComponent items={items} />
-        </Link>     
-        </>
-      ))
-    } */}
     </>
   )} 
 export default BodyComponent

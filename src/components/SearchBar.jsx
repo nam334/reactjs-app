@@ -2,12 +2,12 @@ import { useState } from 'react'
 
 import stateData from '../utils/statedata.json'
 import useCities from './customhooks/useCities'
+import ThemeContext from '../context/ThemeContext';
 
 const SearchBar = ({setsearchData,searchData}) => {
   const [searchText, setSearchText] = useState('')
   const [stateName, setStateName] =  useState('Assam')
   const [cityName, setCityName] =  useState('')
-
   const cityList = useCities(stateName)
   const searchHandler = (searchText) => 
   { 
@@ -22,6 +22,9 @@ const SearchBar = ({setsearchData,searchData}) => {
   }
   return (
     <>
+    <div>
+   
+    </div>
      <div className='search'>
         <form onSubmit={submitHandler}>
             <input placeholder="Enter name ..." 

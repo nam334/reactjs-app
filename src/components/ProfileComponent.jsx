@@ -3,6 +3,7 @@ import { Component } from "react";
 import { Outlet } from "react-router-dom";
 
 class ProfileComponent extends Component{
+   
     constructor(props){
         super(props);
         this.state={
@@ -25,7 +26,6 @@ class ProfileComponent extends Component{
         console.log("Profile CDU")
     }
     render(){
-    console.log("Profile render")
     const {login, avatar_url,name} = this.state.fetchData
     return(
         

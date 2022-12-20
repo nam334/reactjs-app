@@ -1,24 +1,24 @@
+import { useContext } from 'react'
+
+import ThemeContext from '../context/ThemeContext'
+import Card from './Card'
 const CardComponent = ({searchData}) => {
+
+  const {theme, setTheme} = useContext(ThemeContext)
+  
   if(!searchData) return null
- console.log({searchData})
+
     return( 
-    <div className="card-container">
+     <>
+     <button onClick={()=>setTheme(theme === 'dark' ? 'light' :'dark')}>Change theme: {theme}</button>
+      <div className="card-container" style={{
+        backgroundColor: theme === 'dark' ? "#000" : "#fff"
+      }}>
     {
-      searchData.map(data  => (
-    
-      <div className="card" key={data.id}>
-      <img src={data.avatar_url} width="200" height="200" alt="profilepic"/>
-      <h6>{data.name}</h6>
-      <h6>{data.location}</h6>
-      <h6>{data.blog}</h6> 
-      <h6>{data.twitter_username}</h6>
-    </div> 
-    
-      ))
+      searchData.map(data  => <Card  data ={data}/>)
     }
-    
     </div>
-   
+     </>
     )
   }
 

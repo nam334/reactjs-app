@@ -1,10 +1,10 @@
 import {useParams} from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
-import CardComponent from './CardComponent'
+import Card from './Card'
 const TeamMemberDetails = () => {
-    const {id} = useParams()
-    const [teamInfo, setTeamInfo] = useState([])
+     const {id} = useParams()
+     const [teamInfo, setTeamInfo] = useState([])
     useEffect(()=>{
          fetchTeamMemberData(id)
     },[])
@@ -14,7 +14,9 @@ const TeamMemberDetails = () => {
        setTeamInfo(json)
     }
   return (
-    <CardComponent items={teamInfo}/>
+   <>
+   <Card data={teamInfo}/>
+   </>
   )
 }
 
