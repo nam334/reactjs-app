@@ -8,6 +8,7 @@ import ErrorComponent from '../components/ErrorComponent';
 import TeamMemberDetails from '../components/TeamMemberDetails';
 import ProfileComponent from '../components/ProfileComponent'
 import NestedProfile from '../components/NestedProfile';
+import Login from '../components/Login';
 
 const About = lazy(()=>import("../components/About"))
 export const appRouter = createBrowserRouter([
@@ -23,6 +24,10 @@ export const appRouter = createBrowserRouter([
         { 
           path:"/search",
           element:<BodyComponent />,
+        },
+        { 
+          path:"/login",
+          element:<Login/>,
         },
         {
           path:"/about",

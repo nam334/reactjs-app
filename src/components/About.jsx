@@ -19,7 +19,7 @@ export class About extends Component {
     console.log("About render")
     return (
       <div>
-        We are EcmaScripters!
+        <h1 className='font-sans hover:font-serif'>We are EcmaScripters!</h1>
         <Outlet/>
         </div>
     )

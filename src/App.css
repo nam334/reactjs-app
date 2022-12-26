@@ -1,4 +1,4 @@
-.card-container{
+/* .card-container{
   display: flex;
   flex-wrap: wrap;
   
@@ -9,4 +9,9 @@
 }
 .search{
   margin: 2px; 
-}
+} */
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
