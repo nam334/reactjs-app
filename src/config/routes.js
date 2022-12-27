@@ -16,6 +16,11 @@ export const appRouter = createBrowserRouter([
       path:"/",
       element:<App/>,
       errorElement: <ErrorComponent/>,
+    },
+    {
+      path:"/",
+      element:<App/>,
+      errorElement: <ErrorComponent/>,
       children:[
         {
           path:"/team/:id",

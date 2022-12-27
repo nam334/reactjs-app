@@ -2,11 +2,12 @@ import React,{useState} from 'react'
 import { useDispatch } from 'react-redux'
 
 import { adduser } from './userSlice'
-
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [photo, setPhoto] = useState('')
+    let navigate = useNavigate();
     const dispatch = useDispatch()
 
     const submitHandler = (e) => {
@@ -17,6 +18,7 @@ const Login = () => {
             email:email,
             photo:photo
         }))
+        navigate("/search")
         setName('')
         setEmail('')
         setPhoto('')
@@ -40,7 +42,7 @@ const Login = () => {
       </label>
       <input className="shadow appearance-none border border-red-500 rounded w-full 
       py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" 
-      id="email" type="email" onChange={(e)=>setEmail(e.target.value)} placeholder="Enter email..."/>
+      id="email" type="email" onChange={(e)=>setEmail(e.target.value)} placeholder="Enter email..."/> 
     </div>
     <div className="mb-8">
       <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="file">

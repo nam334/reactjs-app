@@ -4,22 +4,7 @@ const Card = ({data}) => {
   if(!data) return null
   
   return (
-    <>
-    {/* <Link to={`/team/${data.login}`}>  */}
-   
-     {/* <div className="" key={data.id}>
-      <img src={data.avatar_url} width="200" height="200" alt="profilepic"/>
-      <h6>{data.name}</h6>
-      <h6>{data.location}</h6>
-      <h6>{data.blog}</h6>    
-      <h6>{data.twitter_username}</h6>
-    </div>  */}
-  
-    
-    {/* <div className="container my-12 mx-auto px-4 md:px-12">
-    <div className="flex flex-wrap -mx-1 lg:-mx-4"> */}
-
-       
+    <>    
         <div className="my-4 px-10 w-full md:w-1/2 lg:my-4  lg:px-10 lg:w-1/3 ">
 
          
@@ -49,26 +34,9 @@ const Card = ({data}) => {
                         <p className="ml-2 text-sm font-thin text-gray-900 ">
                             Total repo - {data.public_repos}
                         </p>
-                    {/* </a>
-                    <a className="no-underline text-grey-darker hover:text-red-dark" href="#"> */}
-                        {/* <span className="hidden">Like</span>
-                        <i className="fa fa-heart"></i> */}
-                    {/* </a> */}
                 </footer>
-
             </article>
-          
-
         </div>
-        
-        
-
-{/*         
-    </div>
-</div> */}
-
-
-    {/* </Link> */}
     </>
   )
 }

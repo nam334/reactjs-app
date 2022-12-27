@@ -7,6 +7,8 @@ import { teamData } from '../utils/constants'
 
 const BodyComponent = () => { 
    const [searchData, setsearchData] = useState([])
+   const [searchText, setSearchText] = useState('')
+   const [cityName, setCityName] =  useState('')
    useEffect(()=>{
     function fetchTeamData(){
         const data = teamData.map(async member => {
@@ -16,14 +18,17 @@ const BodyComponent = () => {
       })
       return data
     }
-    const res = fetchTeamData()
+    const res = fetchTeamData() 
     Promise.all(res).then((values) => {
         setsearchData(values)
     });
-   },[])
+   },[searchText, cityName])
   return (  
     <>
-    <SearchBar setsearchData={setsearchData} searchData={searchData}/>
+    <SearchBar setsearchData={setsearchData} searchData={searchData}
+     searchText={searchText} setSearchText={setSearchText} 
+     cityName={cityName} setCityName={setCityName}
+     />
     
     {
       searchData && <CardComponent searchData={searchData}/>
